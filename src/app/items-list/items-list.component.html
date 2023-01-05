@@ -1,0 +1,9 @@
+<p *ngIf="!(items|async)">
+    Loading...
+</p>
+
+<cdk-virtual-scroll-viewport class="custom-scroll" itemSize="30"> 
+    <div class="items-list">
+        <app-item *cdkVirtualFor="let item of (items|async)" [item]="item" class="items-list__item"></app-item>
+    </div>
+</cdk-virtual-scroll-viewport>

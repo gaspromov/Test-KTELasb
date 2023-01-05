@@ -1,0 +1,13 @@
+:host{
+    display: grid;
+    padding: 25px;
+}
+
+.items-list{
+    display: flex;
+    flex-direction: column;
+    
+    &__item:not(:last-child){
+        margin-bottom: 20px;
+    }
+}
