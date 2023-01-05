@@ -2,10 +2,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    
-    > *:not(:last-child) {
-        margin-right: 15px;
-    }
 
     &__name{
         font-weight: 600;
