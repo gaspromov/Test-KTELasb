@@ -1,0 +1,11 @@
+{
+    "items": [
+        {
+        "name": "string",
+        "qty": 2,
+        "price": 200,
+        "article": "string",
+        "id": 0
+        }
+    ]
+}
