@@ -3,5 +3,6 @@ export interface Item{
     qty: number,
     price: number,
     article: string,
-    id: number
+    id: number,
+    currency: string
 }
