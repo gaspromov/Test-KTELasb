@@ -34,7 +34,7 @@ export class ItemsService {
   }
 
 
-  public onAddItem( data: Item ){
+  public addItem( data: Item ){
     if ( !this.items ) return
     this.items.push(data);
   }
