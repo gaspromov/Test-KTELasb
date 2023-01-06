@@ -1,0 +1,45 @@
+<form [formGroup]="form" (ngSubmit)="onCreate()" class="form">
+
+    <div class="form__row row">
+        <mat-form-field >
+            <mat-label>Name</mat-label>
+            <input type="text" matInput formControlName="name" autocomplete="off">
+        </mat-form-field>
+        
+        <mat-form-field >
+            <mat-label>Quantity</mat-label>
+            <input type="number" matInput formControlName="qty" autocomplete="off">
+        </mat-form-field>
+    </div>
+
+
+    <div class="form__row row">
+        <mat-form-field >
+            <mat-label>Price</mat-label>
+            <input type="number" matInput formControlName="price" autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Currency</mat-label>
+            <mat-select formControlName="currency" name="currency">
+                <mat-option value="USD"> USD </mat-option>
+                <mat-option value="EUR"> EURO </mat-option>
+                <mat-option value="RUB"> RUB </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="form__row row">
+        <mat-form-field class="width-100">
+            <mat-label>Article</mat-label>
+            <input type="text" matInput formControlName="article" autocomplete="off">
+        </mat-form-field>
+    </div>
+
+    
+
+    <div class="form__row row row_content-center">
+        <button mat-raised-button color="primary" class="btn-submit"> Create </button>
+    </div>
+
+</form>
