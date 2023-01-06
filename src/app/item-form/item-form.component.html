@@ -3,12 +3,18 @@
     <div class="form__row row">
         <mat-form-field >
             <mat-label>Name</mat-label>
-            <input type="text" matInput formControlName="name" autocomplete="off">
+            <input type="text" matInput formControlName="name" autocomplete="off" capitalize-validator>
+            <mat-error *ngIf="form.get('name')?.hasError('capitalizedFirstLetter')">
+                Value must start with a capital letter - <strong>{{ form.get('name')?.getError('capitalizedFirstLetter').validValue }}</strong>
+            </mat-error>
         </mat-form-field>
         
         <mat-form-field >
             <mat-label>Quantity</mat-label>
-            <input type="number" matInput formControlName="qty" autocomplete="off">
+            <input type="number" matInput formControlName="qty" autocomplete="off" min="0">
+            <mat-error *ngIf="form.get('qty')?.hasError('min')">
+                Value cannot be <strong>less than {{ form.get('qty')?.getError('min')?.min }}</strong>
+            </mat-error>
         </mat-form-field>
     </div>
 
@@ -16,7 +22,10 @@
     <div class="form__row row">
         <mat-form-field >
             <mat-label>Price</mat-label>
-            <input type="number" matInput formControlName="price" autocomplete="off">
+            <input type="number" matInput formControlName="price" autocomplete="off" min="1">
+            <mat-error *ngIf="form.get('price')?.hasError('min')">
+                Value cannot be <strong>less than {{ form.get('price')?.getError('min')?.min }}</strong>
+            </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
