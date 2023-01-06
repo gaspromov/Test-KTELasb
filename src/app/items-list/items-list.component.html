@@ -2,8 +2,9 @@
     Loading...
 </p>
 
-<cdk-virtual-scroll-viewport class="custom-scroll" itemSize="30"> 
+<cdk-virtual-scroll-viewport class="custom-scroll" itemSize="30" *ngIf="(items|async)"> 
     <div class="items-list">
         <app-item *cdkVirtualFor="let item of (items|async)" [item]="item" class="items-list__item"></app-item>
     </div>
+    <a class="create-link" mat-stroked-button color="primary" routerLink="/create">Create item</a>
 </cdk-virtual-scroll-viewport>
