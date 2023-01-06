@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Requests } from '../const';
 import { Item } from '../item/interfaces/item';
+import { ItemsService } from '../shared/store/items.service';
 import { HttpService } from '../tools/services/http.service';
-import { ItemsListService } from './services/items-list.service';
 
 @Component({
   selector: 'app-items-list',
@@ -14,7 +14,7 @@ export class ItemsListComponent implements OnInit {
   items!: Observable<Item[]>
 
   constructor(
-    private store: ItemsListService
+    private store: ItemsService
   ) { }
 
   ngOnInit(): void {

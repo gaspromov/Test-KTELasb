@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, finalize, take, throwError } from 'rxjs';
 import { Requests } from '../const';
+import { ItemsService } from '../shared/store/items.service';
 import { HttpService } from '../tools/services/http.service';
 import { Item } from './interfaces/item';
 
@@ -16,9 +17,9 @@ export class ItemComponent implements OnInit {
   loading: boolean = false;
 
   constructor(
-    private http: HttpService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private store: ItemsService
   ) { }
 
   ngOnInit(): void {
@@ -29,7 +30,7 @@ export class ItemComponent implements OnInit {
     let itemId = this.activatedRoute.snapshot.params['id'];
 
     this.loading = true;
-    this.http.request( Requests['getItemById'], null, itemId )
+    this.store.getItemById( itemId )
       .pipe(
         take(1),
         finalize(() => this.loading = false),
