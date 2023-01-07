@@ -6,12 +6,9 @@ import { Item } from 'src/app/item/interfaces/item';
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.scss']
 })
-export class ItemComponent implements OnInit {
+export class ItemComponent {
   @Input() item!: Item
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
